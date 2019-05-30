@@ -37,6 +37,17 @@ return its depth = 3.
  * }
  */
 
+
+// Java
+class Solution {
+    public int maxDepth(TreeNode root) {
+        if(root==null)return 0;
+        
+        return Math.max(maxDepth(root.left),maxDepth(root.right))+1;
+    }
+}
+
+/*
 // C++
 class Solution {
 public:
@@ -48,12 +59,4 @@ public:
         return left>right? left:right;
     }
 };
-
-// Java
-class Solution {
-    public int maxDepth(TreeNode root) {
-        if(root==null)return 0;
-        
-        return Math.max(maxDepth(root.left),maxDepth(root.right))+1;
-    }
-}
+*/

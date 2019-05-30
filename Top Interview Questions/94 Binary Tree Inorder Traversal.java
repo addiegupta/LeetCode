@@ -24,6 +24,33 @@ Follow up: Recursive solution is trivial, could you do it iteratively?
 
 */
 
+// Java
+class Solution {
+    public List<Integer> inorderTraversal(TreeNode root) { 
+        List<Integer> ans = new ArrayList<>();
+        if(root==null)return ans;
+        Stack<TreeNode> stk = new Stack<>();
+        TreeNode temp;
+        stk.push(root);
+        while(!stk.isEmpty()){
+            root = stk.pop();
+            if(root.left==null){
+                ans.add(root.val);
+                if(root.right!=null) stk.push(root.right);
+            }
+            else{
+                temp = root.left;
+                root.left = null;
+                stk.push(root);
+                stk.push(temp);
+            }
+        }    
+        return ans;
+    }
+}
+
+/*
+
 // C++
 class Solution {
 public:
@@ -51,28 +78,4 @@ public:
         return ans;
     }
 };
-
-// Java
-class Solution {
-    public List<Integer> inorderTraversal(TreeNode root) { 
-        List<Integer> ans = new ArrayList<>();
-        if(root==null)return ans;
-        Stack<TreeNode> stk = new Stack<>();
-        TreeNode temp;
-        stk.push(root);
-        while(!stk.isEmpty()){
-            root = stk.pop();
-            if(root.left==null){
-                ans.add(root.val);
-                if(root.right!=null) stk.push(root.right);
-            }
-            else{
-                temp = root.left;
-                root.left = null;
-                stk.push(root);
-                stk.push(temp);
-            }
-        }    
-        return ans;
-    }
-}
+*/

@@ -25,16 +25,6 @@ Output: 4
 
 */
 
-// C++
-class Solution {
-public:
-    int singleNumber(vector<int>& nums) {
-        int x = 0;
-        for(auto it = nums.begin();it!=nums.end();it++)x ^= *it;
-        return x;
-    }
-};
-
 // Java
 class Solution {
     public int singleNumber(int[] nums) {
@@ -46,3 +36,16 @@ class Solution {
         return xor;
     }
 }
+
+
+/*
+// C++
+class Solution {
+public:
+    int singleNumber(vector<int>& nums) {
+        int x = 0;
+        for(auto it = nums.begin();it!=nums.end();it++)x ^= *it;
+        return x;
+    }
+};
+*/
