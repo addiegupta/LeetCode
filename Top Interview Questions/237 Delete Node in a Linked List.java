@@ -2,6 +2,8 @@
 
 LeetCode: 237. Delete Node in a Linked List   
 
+Easy
+
 Link: https://leetcode.com/problems/delete-node-in-a-linked-list/
 
 Topics: Linked List

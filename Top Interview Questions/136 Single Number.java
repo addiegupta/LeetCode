@@ -2,6 +2,8 @@
 
 LeetCode: 136. Single Number   
 
+Easy
+
 Link: https://leetcode.com/problems/single-number/
 
 Acceptance: 60.1

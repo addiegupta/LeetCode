@@ -2,6 +2,8 @@
 
 LeetCode: 217. Contains Duplicate
 
+Easy
+
 Link: https://leetcode.com/problems/contains-duplicate/
 
 Topics: Array,Hash Table
@@ -29,6 +31,20 @@ Output: true
 
 class Solution {
     public boolean containsDuplicate(int[] nums) {
+        // if(nums==null || nums.length==0)return false;
+        // Set<Integer> set = new HashSet<>();
+        // int n = nums.length;
+        // for(int i=0;i<n;i++){
+            // if(set.contains(nums[i]))return true;
+            // set.add(nums[i]);
+        // }
+        // return false;
+        
+        Arrays.sort(nums);
+        for(int i=1;i<nums.length;i++){
+            if(nums[i]==nums[i-1])return true;
+        }
+        return false;
         
     }
 }

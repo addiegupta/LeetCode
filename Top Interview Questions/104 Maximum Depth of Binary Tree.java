@@ -2,6 +2,8 @@
 
 LeetCode: 104. Maximum Depth of Binary Tree   
 
+Easy
+
 Link: https://leetcode.com/problems/maximum-depth-of-binary-tree/
 
 Topics: Tree, Depth First Search

@@ -2,6 +2,8 @@
 
 LeetCode: 344. Reverse String   
 
+Easy
+
 Link: https://leetcode.com/problems/reverse-string
 
 Topics: Two Pointers, String

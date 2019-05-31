@@ -2,6 +2,8 @@
 
 LeetCode: 206. Reverse Linked List   
 
+Easy
+
 Link: https://leetcode.com/problems/reverse-linked-list/
 
 Topics: Linked List

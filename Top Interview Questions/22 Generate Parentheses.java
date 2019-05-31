@@ -2,6 +2,8 @@
 
 LeetCode: 22. Generate Parentheses 
 
+Medium
+
 Link: https://leetcode.com/problems/generate-parentheses/
 
 Acceptance: 54.9

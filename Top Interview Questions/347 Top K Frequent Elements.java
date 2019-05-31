@@ -2,6 +2,8 @@
 
 LeetCode: 347. Top K Frequent Elements   
 
+Medium
+
 Link: https://leetcode.com/problems/top-k-frequent-elements/
 
 Topics: Hash Table, Heap

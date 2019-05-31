@@ -2,6 +2,8 @@
 
 LeetCode: 122. Best Time to Buy and Sell Stock II
 
+Easy
+
 Link: https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/
 
 Acceptance: 51.9

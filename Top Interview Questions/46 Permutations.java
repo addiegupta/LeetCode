@@ -2,6 +2,8 @@
 
 LeetCode: 46. Permutations   
 
+Medium
+
 Link: https://leetcode.com/problems/permutations/
 
 Acceptance: 55.2

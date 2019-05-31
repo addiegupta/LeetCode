@@ -2,6 +2,8 @@
 
 LeetCode: 283 Move Zeroes   
 
+Easy
+
 Link: https://leetcode.com/problems/move-zeroes/
 
 Topics: Array, Two Pointers

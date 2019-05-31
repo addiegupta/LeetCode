@@ -2,6 +2,8 @@
 
 LeetCode: 169. Majority Element
 
+Easy
+
 Link: https://leetcode.com/problems/majority-element/
 
 Topics: Array,Divide and Conquer, Bit Manipulation

@@ -2,6 +2,8 @@
 
 LeetCode: 412. Fizz Buzz   
 
+Easy
+
 Link: https://leetcode.com/problems/fizz-buzz/
 
 Acceptance: 59.5

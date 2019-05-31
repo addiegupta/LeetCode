@@ -1,6 +1,8 @@
 /*
 
-LeetCode: 94. Binary Tree Inorder Traversal   
+LeetCode: 94. Binary Tree Inorder Traversal
+
+Medium   
 
 Link: https://leetcode.com/problems/binary-tree-inorder-traversal/
 
