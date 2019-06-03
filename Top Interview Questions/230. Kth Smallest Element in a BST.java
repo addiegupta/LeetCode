@@ -49,25 +49,25 @@ The optimal runtime complexity is O(height of BST).
  *     TreeNode(int x) { val = x; }
  * }
  */
+
+// Inorder traversal is done to find kth smallest element
 class Solution {
-    class CustomInt{
-        public int x;
-    }
-    private boolean findKth(TreeNode root,int k,CustomInt i,CustomInt ans){
+    int ans,count;
+
+    private boolean findKth(TreeNode root,int k){
         if(root==null)return false;
-        if(findKth(root.left,k,i,ans)) return true;
-        i.x++;
-        if(i.x==k){
-            ans.x = root.val;
+        if(findKth(root.left,k)) return true;
+        // Increase count for this node
+        this.count++;
+        // Check if this is kth smallest element
+        if(this.count==k){
+            this.ans = root.val;
             return true;
         }
-        return findKth(root.right,k,i,ans);
+        return findKth(root.right,k);
     }
     public int kthSmallest(TreeNode root, int k) {
-        CustomInt ans = new CustomInt();
-        CustomInt count = new CustomInt();
-        count.x=0;
-        findKth(root,k,count,ans);
-        return ans.x;
+        findKth(root,k);
+        return this.ans;
     }
 }
