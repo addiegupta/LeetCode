@@ -26,6 +26,13 @@ Follow up: Could you improve it to O(n log n) time complexity?
  
 
  class Solution {
+	
+	public int lengthOfLIS(int[] nums) {
+        // return dpSolution(nums);// O (n^2) time and O(n) space
+        return binarySearchSolution(nums);// O(n logn)time and O(n) space
+    }
+	
+	//O(n^2)
     private int dpSolution(int[] nums){
 
         if(nums==null || nums.length==0)return 0;
@@ -45,6 +52,7 @@ Follow up: Could you improve it to O(n log n) time complexity?
         return ans;
         
     }
+	// O(n logn)
     private int binarySearchSolution(int[] nums){
         int[] dp = new int[nums.length];
         int len=0;
@@ -70,8 +78,5 @@ Follow up: Could you improve it to O(n log n) time complexity?
         }
         return start;
     }
-    public int lengthOfLIS(int[] nums) {
-        // return dpSolution(nums);// O (n^2) time and O(n) space
-        return binarySearchSolution(nums);// O(n logn)time and O(n) space
-    }
+    
 }
