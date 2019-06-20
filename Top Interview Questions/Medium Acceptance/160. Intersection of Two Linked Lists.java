@@ -66,13 +66,15 @@ Your code should preferably run in O(n) time and use only O(1) memory.
  * }
  */
 public class Solution {
+	
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
-		return getListLengthsFirstSolution(headA,headB);
+		//return getListLengthsFirstSolution(headA,headB);
 		return switchPointerToOtherListSolution(headA,headB);
 		
 	}
 	private ListNode getListLengthsFirstSolution(ListNode headA,ListNode headB){
 	
+		// First calculate lengths of the 2 lists (say n1 and n2)
         int n1=0,n2=0;
         ListNode trav = headA;
         while(trav!=null){
@@ -84,6 +86,9 @@ public class Solution {
             trav=trav.next;
             n2++;
         }
+		
+		
+		// Now start pointers at both the lists and advance the bigger list pointer by n1-n2 nodes
         int diff = Math.abs(n1-n2);
         ListNode big,small;
         if(n1>n2){
@@ -95,26 +100,33 @@ public class Solution {
             small=headA;
         }
         for(int i=0;i<diff;i++)big=big.next;
+		
+		// The 2 pointers will eventually meet at the intersection node
         while(big!=small){
             big=big.next;
             small=small.next;
         }
-        if(big==small)return big;
-        return null;
-    }
+		return big;
+	}
 	
-	// TODO COmplete
-	// Works on the count principle only that
+	// Similar to the above approach (based on the length of the lists)
+	// Let List A have m nodes and List B have n nodes
+	// It can be observed that total number of nodes is (m+n-x) where x is common list length ----(1)
+	// Now once pointer on A has traversed m nodes, if it is pointed to head of B then remaining nodes till intersection point is n-x
+	// Hence when A reaches intersection point it will have covered total m + (n-x) nodes
+	// Similarly when B reaches int. point, it will have covered total n+ (m-x) nodes
+	// They will thus meet at int. point
+	// 
+	// If the lists do not intersect, then the loop will end after second iteration
+	// This is because total number of nodes will be m+n and they will both have traversed m+n nodes together and will meet at null
 	private ListNode switchPointerToOtherListSolution(ListNode headA,ListNode headB){
 		
 		if(headA==null || headB==null)return null;
 		
         ListNode a = headA,b=headB;
 		while(a!=b){
-			
 			a = (a==null)?headB:a.next;
 			b = (b==null)?headA:b.next;
-
 		}
 		return a;
 		
