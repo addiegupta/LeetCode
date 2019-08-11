@@ -43,7 +43,7 @@ A solution set is:
         
 		// For every i (O(n)), adjust j and k together (either inc. j or dec. k) in O(n) hence total complexity is O(n^2)
 		for(int i=0;i<n-2;i++){
-			// Smallest is less than 0, no solution can be found further
+			// Smallest is greater than 0, no solution can be found further
             if(nums[i]>0)break;
 			// Skip duplicates
             if(i>0 && nums[i]==nums[i-1])continue;
