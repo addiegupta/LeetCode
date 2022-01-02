@@ -1,0 +1,15 @@
+#TODO: populate this list with more description
+
+1) Fisher Yates shuffling algorithm:
+
+for randomising an array. basic idea: start from end of array and swap it with random index till start. then decrement end by 1 index and repeat
+
+
+2) Moore voting algorithm
+finding majority element in array
+
+
+3) Kadane's algorithm
+
+best time to buy and sell stock once in array
+

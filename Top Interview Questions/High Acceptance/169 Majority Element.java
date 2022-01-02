@@ -25,6 +25,8 @@ Output: 2
 
  */
 class Solution {
+    // Solved using Boyer Moore voting algorithm
+    // based on the idea that majority count will overpower minority elements
     public int majorityElement(int[] nums) {
 
         // Select first as majority element

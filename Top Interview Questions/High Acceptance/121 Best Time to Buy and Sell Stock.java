@@ -31,6 +31,7 @@ Explanation: In this case, no transaction is done, i.e. max profit = 0.
 */
 
 class Solution {
+    // variation of Kadane's algorithm (max subarray problem)
     public int maxProfit(int[] prices) {
         if(prices==null || prices.length==0)return 0;
         int ans=0,diff=0;

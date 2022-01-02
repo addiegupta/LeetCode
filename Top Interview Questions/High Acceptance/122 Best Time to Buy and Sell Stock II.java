@@ -37,7 +37,20 @@ Explanation: In this case, no transaction is done, i.e. max profit = 0.
 */
 
 class Solution {
+    private int cleanerSolution (int[] prices){
+	int max = 0;
+        for(int i = 1; i < prices.length; i++){
+	    // keep buying and selling in index difference of 1
+	    // 1 good sell will be simulated as multiple profit sells
+            if(prices[i] - prices[i-1] > 0){
+                max += prices[i] - prices[i-1];
+            }
+        }
+        return max;
+    }
     public int maxProfit(int[] prices) {
+	return cleanerSolution(prices);
+
         int ans=0;
         int n = prices.length;
         if(prices==null || n==0)return ans;

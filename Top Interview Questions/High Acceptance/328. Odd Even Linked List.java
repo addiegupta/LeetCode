@@ -41,7 +41,9 @@ class Solution {
     public ListNode oddEvenList(ListNode head) {
         
         // List is already in required state
-        if(head == null || head.next==null || head.next.next == null)return head;
+	// this many checks are not required
+        // if(head == null || head.next==null || head.next.next == null)return head;
+        if(head == null )return head;
         
         // Needed to connect tail of odd list to head of even list at the end
         ListNode evenHead=head.next;

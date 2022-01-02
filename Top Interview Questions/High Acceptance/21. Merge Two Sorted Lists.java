@@ -28,6 +28,24 @@ Output: 1->1->2->3->4->4
  * }
  */
 class Solution {
+    private ListNode newIterativeSolution (ListNode l1, ListNode l2){
+        ListNode dummy = new ListNode(0), temp;
+        ListNode tail = dummy;
+        while (l1!=null && l2!=null){
+            if (l1.val < l2.val){
+                temp = l1;
+                l1 = l1.next;
+            } else{
+                temp = l2;
+                l2 = l2.next;
+            }
+            tail.next = temp;
+            tail = tail.next;
+        }
+        tail.next = l1 == null ? l2 : l1;
+        return dummy.next;
+    }
+
     private ListNode iterativeSolution(ListNode l1,ListNode l2){
         if(l1==null)return l2;
         if(l2==null) return l1;
@@ -77,6 +95,7 @@ class Solution {
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         
         // return iterativeSolution(l1,l2);
+	// return newIterativeSolution(l1, l2);
         return recursiveSolution(l1,l2);
     }
 }
