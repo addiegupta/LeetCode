@@ -96,4 +96,34 @@ class Solution {
         dp[i][j+1] = findWords(s,i,j+1,dict,dp)?1:0;
         return breakPossible || dp[i][j+1] ==1;
     }
+
+    // another initial recursive solution causing TLE, done later in 2022
+    private boolean initialRecursiveTLE(String s, List<String> wordDict){
+        set = new HashSet();
+	// add words to set
+        for(String x : wordDict){
+            set.add(x);
+	    // maxlength is for optimisation; stop checking substring if its in dict, if maxLength of dict is exceeded
+            maxLength = Math.max(maxLength, x.length());
+        }
+        
+        return recursiveUtil(s, 0);
+        
+    }
+    private boolean recursiveUtil(String s, int end){
+        if(s.length() == 0){
+            return true;
+        }
+	// overflow
+        if(end >= s.length() || end > maxLength){
+            return false;
+        }
+	// word till here exists in dict, either break here and recurse on remaining string OR continue recursion without breaking
+	// if either returns true, wordbreak is possible
+        if(set.contains(s.substring(0, end + 1))){
+            return recursiveUtil(s.substring(end + 1, s.length()), 0) || recursiveUtil(s, end + 1);
+        }
+	// recurse without breaking 
+        return recursiveUtil(s, end + 1) ;
+    }
 }

@@ -25,6 +25,7 @@ Explanation: 13 = 4 + 9.
 
  */
 class Solution {
+    // Time Complexity: O(n * sqrt(n), Space: O(n)
     public int numSquares(int n) {
         if(n<=0)return 0;
         

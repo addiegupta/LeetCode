@@ -27,7 +27,28 @@ References:
 */
 
 class Solution {
+	
+    private int newCleanSolution(int[] nums) {
+        if(nums == null || nums.length == 0){
+            return 0;
+        }
+        int n = nums.length;
+        int max = Integer.MIN_VALUE;
+        int sum = 0;
+        for(int i = 0; i < n; i++){
+            sum += nums[i];
+            max = Math.max(max, sum);
+            if(sum < 0){
+                sum = 0;
+            }
+        }
+        return max;
+    }
     public int maxSubArray(int[] nums) {
+	return newCleanSolution(nums);
+	
+	//
+	//
         // globalMax and maxValue variables can be merged 
         int currMax=0,maxValue=Integer.MIN_VALUE;
         int globalMax=0;
