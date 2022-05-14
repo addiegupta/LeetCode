@@ -10,6 +10,9 @@ Topics: Dynamic Programming, Divide and Conquer
 
 Acceptance: 48.8
 
+Reference: https://www.youtube.com/watch?v=VFskby7lUbw&t=1015s&ab_channel=NeetCode
+
+
 Given n balloons, indexed from 0 to n-1. Each balloon is painted with a number on it represented by array nums. You are asked to burst all the balloons. If the you burst balloon i you will get nums[left] * nums[i] * nums[right] coins. Here left and right are adjacent indices of i. After the burst, the left and right then becomes adjacent.
 
 Find the maximum coins you can collect by bursting the balloons wisely.
@@ -25,9 +28,12 @@ Output: 167
 Explanation: nums = [3,1,5,8] --> [3,5,8] -->   [3,8]   -->  [8]  --> []
              coins =  3*1*5      +  3*5*8    +  1*3*8      + 1*8*1   = 167
 
+
  */
 class Solution {
    
+    // Time: O(n^3) : n^2 possible subarrays, for every subarray an iteration of n is done
+    // Space: O(n^2): dp cache for all n^2 subarrays
     public int maxCoins(int[] nums) {
         
         // Empty array

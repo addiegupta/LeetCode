@@ -33,9 +33,40 @@ Explanation: It could be decoded as "BZ" (2 26), "VF" (22 6), or "BBF" (2 2 6).
 class Solution {
     public int numDecodings(String s) {
 
+	return new2022CleanIterativeSolution(s);
         return iterativeSolution(s);
         // Non traditional
         // return recursiveSolution(s);
+    }
+    private int new2022CleanIterativeSolution(String s){
+  	// leading 0s would lead to no formation of decoding
+        if(s == null || s.length() == 0 || s.charAt(0) == '0'){
+            return 0;
+        }
+        int n = s.length();
+        char prevChar = s.charAt(0);
+        // these 3 variables replace an entire dp array to store the num of ways upto ith character
+        int prev = 1; // first digit would form 1 way
+        int prevPrev = 1;// if first 2 digit can be used as a letter that would also form 1 way
+        int next = 0;
+        
+        for(int i = 1; i < n; i++){
+            char c = s.charAt(i);
+            // can form 2 digit letter, add num of ways up until there
+            if(prevChar == '1' || (prevChar == '2' && c - '0' <= 6)){
+                next += prevPrev;
+            }    
+            // can form single digit letter, add num of ways up until here
+            if(c != '0'){
+                next += prev;
+            }
+            // update dp variables for next iteration
+            prevPrev = prev;
+            prev = next;
+            next = 0;
+            prevChar = c;
+        }
+        return prev;
     }
 
     // Iterative DP Solution
