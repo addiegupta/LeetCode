@@ -68,3 +68,40 @@ class Solution {
         for(int x=0;x<4;x++)visitIsland(grid,i+row[x],j+col[x]);
     }
 }
+/*
+ * BFS approach added on may 14 2022
+ class Solution {
+    public int numIslands(char[][] grid) {
+        if(grid == null || grid.length == 0){
+            return 0;
+        }
+        int ans = 0;
+        int m = grid.length;
+        int n = grid[0].length;
+        Queue<Pair<Integer, Integer>> q = new LinkedList();
+        int [][] dirs = {{0,1}, {0, -1}, {1, 0}, {-1, 0}};
+        for(int a = 0; a < m; a++){
+            for(int b = 0; b < n; b++){
+                if(grid[a][b] == '1'){
+                    q.offer(new Pair(a, b));
+                    ans++;
+                    while(!q.isEmpty()){
+                        Pair<Integer, Integer> node = q.poll();
+                        int i = node.getKey();
+                        int j = node.getValue();
+                        for(int x = 0; x < 4; x++){
+                            int newI = i + dirs[x][0];
+                            int newJ = j + dirs[x][1];
+                            if(newI >=0 && newJ >= 0 && newI < m && newJ < n && grid[newI][newJ] == '1'){
+                                q.offer(new Pair(newI, newJ));
+                                grid[newI][newJ] = '0';
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return ans;
+    }
+}
+*/
